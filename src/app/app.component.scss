@@ -1,0 +1,17 @@
+/*** CSS GENERAL ***/
+::ng-deep body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*** ELEMENTS DANS LA PAGE ***/
+#video-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playlist{
+    width: 20vh;
+}
