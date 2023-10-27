@@ -6,3 +6,16 @@
 .message-container {
     overflow-y: auto; /* Activer le défilement vertical si nécessaire */
 }
+/* Pour les navigateurs WebKit (comme Chrome et Safari) */
+.message-container::-webkit-scrollbar {
+    width: 10px; /* Largeur de la barre de défilement */
+}
+
+.message-container::-webkit-scrollbar-track {
+    background: #0000005e; /* Couleur de fond de la piste de défilement */
+}
+
+.message-container::-webkit-scrollbar-thumb {
+    background: #00000093; /* Couleur de la poignée de la barre de défilement */
+    border-radius: 8px; /* Style de la poignée de la barre de défilement */
+}
