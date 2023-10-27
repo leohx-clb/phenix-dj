@@ -8,6 +8,7 @@ import { FenetreVideoComponent } from './fenetre-video/fenetre-video.component';
 import { UserBarComponent } from './user-bar/user-bar.component';
 import { ListePlaylistComponent } from './liste-playlist/liste-playlist.component';
 import { ChatComponent } from './chat/chat.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ChatComponent } from './chat/chat.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule // Ajoutez FormsModule ici
   ],
   providers: [],
   bootstrap: [AppComponent]
