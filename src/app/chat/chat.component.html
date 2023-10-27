@@ -2,7 +2,7 @@
     <div class="card-header text-center">
         Chat Room
     </div>
-    <div class="card-body">
+    <div class="card-body message-container" #messageContainer>
         <!-- Afficher les messages ici -->
         <div *ngFor="let message of messages">{{ message.sender }}: {{ message.text }}</div>
     </div>

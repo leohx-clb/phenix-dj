@@ -1,3 +1,11 @@
 .listPlaylist{
     width: 200px;
 }
+.card {
+    height: 80vh; /* La hauteur est de 80% de la hauteur de l'écran */
+    width: 40vh;
+    background-color: rgba(255, 255, 255, 0.062);
+}
+.card-body{
+    padding: 0;
+}

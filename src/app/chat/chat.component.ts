@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-chat',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class ChatComponent {
+  @ViewChild('messageContainer') private messageContainer: ElementRef | undefined;
   messages: { sender: string, text: string }[] = [];
   newMessage: string = ''; // Déclaration de la propriété newMessage
 
@@ -18,10 +19,18 @@ export class ChatComponent {
       // Ajoutez d'autres messages ici
     ];
   }
-    sendMessage() {
-      if (this.newMessage.trim() !== '') { // Vérifiez si le message n'est pas vide
-        this.messages.push({ sender: 'Me', text: this.newMessage });
-        this.newMessage = ''; // Efface le champ de texte après l'envoi
+  sendMessage() {
+    if (this.newMessage.trim() !== '') { // Vérifiez si le message n'est pas vide
+      this.messages.push({ sender: 'Me', text: this.newMessage });
+      this.newMessage = ''; // Efface le champ de texte après l'envoi
+
+      if (this.messageContainer) {
+        setTimeout(() => {
+          if (this.messageContainer) { // Effectuez une double vérification
+              this.messageContainer.nativeElement.scrollTop = this.messageContainer.nativeElement.scrollHeight;
+          }
+        });
       }
     }
+  }
 }
